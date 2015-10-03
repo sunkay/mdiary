@@ -2,9 +2,7 @@
 //var Routes = require('./routes');
 
 import React from 'react';
-//import Routes from './routes';
-import Main from './components/main';
-
+import Routes from './routes';
 
 //React.render(Routes, document.querySelector('.container'));
-React.render(<Main />, document.querySelector('.container'));
+React.render(Routes, document.querySelector('.container'));
