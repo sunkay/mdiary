@@ -1,12 +1,10 @@
-var React = require('react');
+//var React = require('react');
+//var Routes = require('./routes');
 
-var Hello = React.createClass({
-  render: function() {
-    return <h1 className="red">
-      Hello mDiary!
-    </h1>
-  }
-});
+import React from 'react';
+//import Routes from './routes';
+import Main from './components/main';
 
-var element = React.createElement(Hello, {});
-React.render(element, document.querySelector('.container'));
+
+//React.render(Routes, document.querySelector('.container'));
+React.render(<Main />, document.querySelector('.container'));
