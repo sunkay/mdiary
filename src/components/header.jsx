@@ -1,13 +1,14 @@
 import React from 'react';
+import Link from 'react-router'
 
 export default class Header extends React.Component {
   render(){
     return (
       <nav className="navbar navbar-default header">
         <div className="container-fluid">
-          <a href="/" className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             mDiary
-          </a>
+          </Link>
           <ul className="nav navbar-nav navbar-right">
             <li>
               <a href=""> Test1 </a>
