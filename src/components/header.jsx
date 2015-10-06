@@ -1,27 +1,35 @@
 import React from 'react';
-import Link from 'react-router'
+import {Link} from 'react-router';
+import Time from 'react-time';
+
+// material-ui
+import mui from 'material-ui';
+import {ThemeManager} from 'material-ui/lib/styles/theme-manager';
+
+//let ThemeManager = new mui.Styles.ThemeManager();
+let AppBar = mui.AppBar;
+let FlatButton = mui.FlatButton;
+let RaisedButton = mui.RaisedButton;
+let styles = mui.Styles;
+
+//var SmartTimeAgo = TimeAgo;
 
 export default class Header extends React.Component {
   render(){
+    var now = new Date();
+    now.setHours(now.getHours() + 4);
     return (
-      <nav className="navbar navbar-default header">
-        <div className="container-fluid">
-          <Link to="/" className="navbar-brand">
-            mDiary
-          </Link>
-          <ul className="nav navbar-nav navbar-right">
-            <li>
-              <a href=""> Test1 </a>
-            </li>
-            <li>
-              <a href=""> Test2 </a>
-            </li>
-            <li>
-              <a href=""> Test3 </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <div id="page-container">
+        <header>
+          <AppBar title="mDiary"
+            iconElementRight={<FlatButton label="Save" />}
+            >
+              <a href="/test">About</a>
+              <FlatButton label="Home" />
+          </AppBar>
+          <RaisedButton label="My Button" primary={true} />
+        </header>
+      </div>
     );
   }
 }

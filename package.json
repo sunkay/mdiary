@@ -10,6 +10,7 @@
   "dependencies": {
     "babelify": "^6.3.0",
     "browserify": "^9.0.3",
+    "fbjs": "^0.2.1",
     "gulp": "^3.8.11",
     "gulp-concat": "^2.5.2",
     "gulp-react": "^3.0.1",
@@ -18,9 +19,13 @@
     "gulp-util": "^3.0.4",
     "gulp-watch": "^4.2.4",
     "history": "^1.11.1",
+    "material-ui": "^0.12.1",
     "node-notifier": "^4.2.1",
     "react": "^0.13.1",
+    "react-dom": "^0.14.0-rc1",
     "react-router": "^1.0.0-rc1",
+    "react-tap-event-plugin": "^0.1.8",
+    "react-time": "^4.0.0",
     "reflux": "^0.2.12",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^2.4.0"
