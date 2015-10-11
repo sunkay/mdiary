@@ -1,13 +1,13 @@
-import React from 'react';
+var React = require('react');
 
-export default class Home extends React.Component {
-  render(){
-    console.log("In Home render");
+module.exports = React.createClass({
+    render: function(){
+      console.log("In Home render");
 
-    return (
-      <div>
-        Home
-      </div>
-    );
-  }
-}
+      return (
+        <div>
+          Home
+        </div>
+      );
+    }
+});

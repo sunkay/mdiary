@@ -19,7 +19,6 @@
     "gulp-util": "^3.0.4",
     "gulp-watch": "^4.2.4",
     "history": "^1.11.1",
-    "material-ui": "^0.12.1",
     "node-notifier": "^4.2.1",
     "react": "^0.13.1",
     "react-dom": "^0.14.0-rc1",

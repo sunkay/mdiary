@@ -1,12 +1,15 @@
-import React from 'react';
-import {Router, Route, IndexRoute} from 'react-router';
-import {createHashHistory} from 'history';
+var React = require('react');
+var ReactRouter = require('react-router');
+var createHashHistory =  require('history').createHashHistory;
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+var IndexRoute = ReactRouter.IndexRoute;
 
-import Main from './components/main';
-import Test from './components/test';
-import Home from './components/home';
+var Main = require('./components/main');
+var Test = require('./components/test');
+var Home = require('./components/home');
 
-let history = new createHashHistory();
+var history = createHashHistory();
 
 export default(
     <Router history={history}>

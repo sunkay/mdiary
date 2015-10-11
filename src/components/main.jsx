@@ -1,14 +1,13 @@
-import React from 'react';
-import Header from './header';
+var React = require('react');
+//var Header = require('./header');
 
-
-export default class Main extends React.Component {
-  render(){
-    return (
-      <div>
-        <Header />
-        {this.props.children}
-      </div>
-    );
-  }
-}
+module.exports = React.createClass({
+    render: function(){
+      return (
+        <div>
+          HEADER
+          {this.props.children}
+        </div>
+      );
+    }
+});

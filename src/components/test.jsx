@@ -1,13 +1,13 @@
-import React from 'react';
+var React = require('react');
 
-export default class Test extends React.Component {
-  render(){
-    console.log("In test render");
+module.exports = React.createClass({
+    render: function(){
+      console.log("In test render");
 
-    return (
-      <div>
-        Test
-      </div>
-    );
-  }
-}
+      return (
+        <div>
+          Test
+        </div>
+      );
+    }
+});
