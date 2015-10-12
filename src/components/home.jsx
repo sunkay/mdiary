@@ -1,13 +1,11 @@
 var React = require('react');
-var ConditionsList = require('./conditions-list');
+var ConditionsContainer = require('./conditions-container');
 
 module.exports = React.createClass({
   render: function(){
-    console.log("In Home render");
-
     return (
       <div className="container">
-        <ConditionsList />
+        <ConditionsContainer />
       </div>
     );
   }
