@@ -10,7 +10,6 @@ module.exports = React.createClass({
     );
   },
   renderConditions: function(){
-
     return this.props.conditions.map(function(condition){
       return (
         <Condition {...condition} />
