@@ -10,6 +10,7 @@ var Home = require('./components/home');
 var Terms = require('./components/org/terms');
 var about = require('./components/org/about');
 var Privacy = require('./components/org/privacy');
+var ConditionsAdd = require('./components/conditions/conditions-add');
 
 
 var history = createHashHistory();
@@ -21,6 +22,7 @@ export default(
       <Route path="about" component={about} />
       <Route path="terms" component={Terms} />
       <Route path="privacy" component={Privacy} />
+      <Route path="condition-add" component={ConditionsAdd} />
     </Route>
   </Router>
 );
