@@ -1,5 +1,5 @@
 var React = require('react');
-var ConditionsContainer = require('./conditions-container');
+var ConditionsContainer = require('./conditions/conditions-container');
 
 module.exports = React.createClass({
   render: function(){

@@ -6,11 +6,10 @@ var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 
 var Main = require('./components/main');
-var Test = require('./components/test');
 var Home = require('./components/home');
-var Terms = require('./components/terms');
-var about = require('./components/about');
-var Privacy = require('./components/privacy');
+var Terms = require('./components/org/terms');
+var about = require('./components/org/about');
+var Privacy = require('./components/org/privacy');
 
 
 var history = createHashHistory();

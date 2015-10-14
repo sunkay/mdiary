@@ -1,5 +1,5 @@
 var React = require('react');
-var Condition = require('./card');
+var Condition = require('../common/card');
 
 module.exports = React.createClass({
   render: function(){
