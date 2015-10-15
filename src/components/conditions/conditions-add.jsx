@@ -1,13 +1,11 @@
 var React = require('react');
 
 module.exports = React.createClass({
-  render: function(){
-    return this.renderHTML();
-
+  handleSubmit: function(e){
+    console.log("in handleSubmit");
   },
 
-
-  renderHTML: function(){
+  render: function(){
     return (
       <div id="basic-form" className="section">
         <div className="row">
@@ -29,7 +27,10 @@ module.exports = React.createClass({
                     </div>
                     <div className="row">
                       <div className="input-field col s12">
-                        <button className="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                        <button className="btn cyan waves-effect waves-light right"
+                          onClick={this.handleSubmit}
+                          type="submit"
+                          name="action">Submit
                           <i className="mdi-content-send right"></i>
                         </button>
                       </div>
