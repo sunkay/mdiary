@@ -1,8 +1,20 @@
 var React = require('react');
+var LinkedStateMixin = require('react-addons-linked-state-mixin');
+
 
 module.exports = React.createClass({
+  mixins: [LinkedStateMixin],
+
+  getInitialState: function() {
+    return {
+      title: "",
+      description: ""
+    };
+  },
+
   handleSubmit: function(e){
-    console.log("in handleSubmit");
+    e.preventDefault();
+    console.log("in handleSubmit: title= "+this.state.title+ " desc: "+this.state.description);
   },
 
   render: function(){
@@ -16,14 +28,25 @@ module.exports = React.createClass({
                 <form className="col s12">
                   <div className="row">
                     <div className="input-field col s12">
-                      <input placeholder="Enter title" id="name2" type="text"/>
-                      <label htmlFor="first_name" className="active">Title</label>
+                      <input
+                        placeholder="Enter title"
+                        id="name2"
+                        type="text"
+                        valueLink={this.linkState('title')}/>
+                      <label htmlFor="title" className="active">Title</label>
                     </div>
                   </div>
                   <div className="row">
                     <div className="input-field col s12">
-                      <textarea placeholder="Enter description of the condition" id="message2" className="materialize-textarea"></textarea>
-                      <label htmlFor="message" className="active">Description</label>
+                      <textarea
+                        placeholder="Enter description of the condition"
+                        id="message2"
+                        className="materialize-textarea"
+                        valueLink={this.linkState('description')}
+                        >
+
+                      </textarea>
+                      <label htmlFor="description" className="active">Description</label>
                     </div>
                     <div className="row">
                       <div className="input-field col s12">

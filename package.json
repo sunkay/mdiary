@@ -22,6 +22,7 @@
     "history": "^1.11.1",
     "node-notifier": "^4.2.1",
     "react": "^0.14.0",
+    "react-addons-linked-state-mixin": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-router": "^1.0.0-rc1",
     "react-tap-event-plugin": "^0.1.8",
