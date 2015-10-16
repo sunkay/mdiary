@@ -2,10 +2,17 @@ var React = require('react');
 var ReactFire = require('reactfire');
 var Firebase = require('firebase');
 var ConditionsList = require('./conditions-list');
+var handle = require('../common/firebase');
 
+/*
 var rootUrl = "https://m-diary.firebaseio.com/";
 
-module.exports = React.createClass({
+var getFirebaseHandle = function(){
+  return new Firebase(rootUrl + 'conditions/');
+}
+*/
+
+var conditionsContainer = React.createClass({
   mixins: [ReactFire],
 
   getInitialState: function() {
@@ -13,8 +20,9 @@ module.exports = React.createClass({
       conditions: []
     };
   },
+
   componentWillMount: function() {
-    this.fb = new Firebase(rootUrl + 'conditions/');
+    this.fb = handle.getFBConditionsHandle();
     this.bindAsArray(this.fb, 'conditions');
 
     /*
@@ -56,3 +64,6 @@ module.exports = React.createClass({
     });
   }
 });
+
+module.exports = conditionsContainer;
+module.exports.getFirebaseHandle = conditionsContainer.getFirebaseHandle;

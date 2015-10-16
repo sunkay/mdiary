@@ -1,9 +1,11 @@
 var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var handle = require('../common/firebase');
+var History = require('react-router').History;
 
 
 module.exports = React.createClass({
-  mixins: [LinkedStateMixin],
+  mixins: [LinkedStateMixin, History],
 
   getInitialState: function() {
     return {
@@ -15,6 +17,9 @@ module.exports = React.createClass({
   handleSubmit: function(e){
     e.preventDefault();
     console.log("in handleSubmit: title= "+this.state.title+ " desc: "+this.state.description);
+    this.fb = handle.getFBConditionsHandle();
+    this.fb.push(this.state);
+    this.history.pushState(null, '/');
   },
 
   render: function(){
