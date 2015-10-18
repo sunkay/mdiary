@@ -1,69 +1,35 @@
 var React = require('react');
-var ReactFire = require('reactfire');
-var Firebase = require('firebase');
+var ConditionsStore = require('../../stores/conditionsStore');
+var ConditionsActions = require('../../actions/conditionsActions');
+
 var ConditionsList = require('./conditions-list');
-var handle = require('../common/firebase');
 
-/*
-var rootUrl = "https://m-diary.firebaseio.com/";
-
-var getFirebaseHandle = function(){
-  return new Firebase(rootUrl + 'conditions/');
-}
-*/
 
 var conditionsContainer = React.createClass({
-  mixins: [ReactFire],
 
   getInitialState: function() {
-    return {
-      conditions: []
-    };
+    return ConditionsStore.getState();
   },
 
-  componentWillMount: function() {
-    this.fb = handle.getFBConditionsHandle();
-    this.bindAsArray(this.fb, 'conditions');
+  componentDidMount: function() {
+    ConditionsStore.listen(this.onChange);
 
-    /*
-    if(this.state.conditions.length === 0){
-      console.log("empty DB.... initializing...");
-      this.initDBwithRecords();
-    }
-    */
+    ConditionsActions.fetchConditions();
   },
+
+  componentWillUnmount: function() {
+    ConditionsStore.unlisten(this.onChange);
+  },
+
+  onChange: function(state){
+    this.setState(state);
+  },
+
   render: function(){
     console.log("In Conditions container render....");
     return <ConditionsList conditions={this.state.conditions} />
   },
 
-  handleDataLoaded: function(){
-    console.log("in conditions-container:handleDataLoaded");
-  },
-
-  initDBwithRecords: function(){
-    this.fb.push({
-      title: 'Headache',
-      description: 'I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.'
-    });
-    this.fb.push({
-      title: 'Stomach Ache',
-      description: 'I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.'
-    });
-    this.fb.push({
-      title: 'Body Pains',
-      description: 'I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.'
-    });
-    this.fb.push({
-      title: 'Fever',
-      description: 'I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.'
-    });
-    this.fb.push({
-      title: 'Cough',
-      description: 'I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.'
-    });
-  }
 });
 
 module.exports = conditionsContainer;
-module.exports.getFirebaseHandle = conditionsContainer.getFirebaseHandle;
