@@ -1,6 +1,7 @@
 var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-var handle = require('../common/firebase');
+var ConditionsActions = require('../../actions/conditionsActions');
+
 var History = require('react-router').History;
 
 
@@ -17,8 +18,9 @@ module.exports = React.createClass({
   handleSubmit: function(e){
     e.preventDefault();
     console.log("in handleSubmit: title= "+this.state.title+ " desc: "+this.state.description);
-    this.fb = handle.getFBConditionsHandle();
-    this.fb.push(this.state);
+
+    ConditionsActions.addCondition(this.state);
+
     this.history.pushState(null, '/');
   },
 

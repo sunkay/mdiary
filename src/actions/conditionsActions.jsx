@@ -36,6 +36,14 @@ class ConditionsActions{
     this.dispatch();
     this.actions.updateConditions(mockData);
   }
+
+  addCondition(condition){
+    this.dispatch();
+
+    mockData.push(condition);
+
+    this.actions.updateConditions(mockData);
+  }
 }
 
 module.exports = alt.createActions(ConditionsActions);
