@@ -1,4 +1,6 @@
 var alt = require('../alt');
+var firebase = require('../components/common/firebase');
+var reactFire = require('reactfire');
 
 var mockData = [
   {
@@ -27,14 +29,24 @@ var mockData = [
   },
 ];
 
+
 class ConditionsActions{
+
   updateConditions(conditions){
     this.dispatch(conditions);
   }
 
   fetchConditions(){
     this.dispatch();
-    this.actions.updateConditions(mockData);
+    var conditions = [];
+
+    this.ref = firebase.getFBConditionsHandle();
+    this.ref.on("value", function(allConditionsSnapshot){
+      allConditionsSnapshot.forEach(function(conditionSnapshot){
+        conditions.push(conditionSnapshot.val());
+      });
+      this.actions.updateConditions(conditions);
+    }.bind(this));
   }
 
   addCondition(condition){
