@@ -33,10 +33,14 @@ var mockData = [
 class ConditionsActions{
 
   updateConditions(conditions){
+    console.log("In updateConditions...");
+
     this.dispatch(conditions);
   }
 
   fetchConditions(){
+    console.log("In fetchConditions...");
+
     this.dispatch();
     var conditions = [];
 
@@ -50,11 +54,11 @@ class ConditionsActions{
   }
 
   addCondition(condition){
+    console.log("In addCondition...");
+
+    this.ref = firebase.getFBConditionsHandle();
+    this.ref.push(condition);
     this.dispatch();
-
-    mockData.push(condition);
-
-    this.actions.updateConditions(mockData);
   }
 }
 

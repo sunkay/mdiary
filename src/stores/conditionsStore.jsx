@@ -15,10 +15,14 @@ class ConditionsStore{
   }
 
   handleUpdateConditions(conditions){
+    console.log("In handleUpdateConditions...");
+
     this.conditions = conditions;
   }
-  
+
   handleFetchConditions(){
+    console.log("In handleFetchConditions...");
+
     this.conditions = [];
   }
 
