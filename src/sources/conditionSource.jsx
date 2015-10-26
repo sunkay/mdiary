@@ -1,6 +1,5 @@
-var alt = require('../alt');
+var ConditionActions = require('../actions/conditionActions');
 var firebase = require('../components/common/firebase');
-var reactFire = require('reactfire');
 
 var mockData = [
   {
@@ -29,37 +28,38 @@ var mockData = [
   },
 ];
 
+var ConditionSource = {
+  fetchConditions() {
+    console.log("ConditionsSource:In fetchConditions...");
 
-class ConditionsActions{
+    return {
+      remote() {
+        return new Promise(function (resolve, reject) {
+          // simulate an asynchronous flow where data is fetched on
+          // a remote server somewhere.
+          setTimeout(function () {
 
-  updateConditions(conditions){
-    console.log("In updateConditions...");
+            // change this to `false` to see the error action being handled.
+            if (true) {
+              // resolve with some mock data
+              resolve(mockData);
+            } else {
+              reject('Things have broken');
+            }
+          }, 250);
+        });
+      },
 
-    this.dispatch(conditions);
+      local() {
+        // Never check locally, always fetch remotely.
+        return null;
+      },
+
+      success: ConditionActions.updateConditions,
+      error: ConditionActions.conditionsFailed,
+      loading: ConditionActions.fetchConditions
+    }
   }
+};
 
-  fetchConditions(){
-    console.log("In fetchConditions...");
-
-    this.dispatch();
-    var conditions = [];
-
-    this.ref = firebase.getFBConditionsHandle();
-    this.ref.on("value", function(allConditionsSnapshot){
-      allConditionsSnapshot.forEach(function(conditionSnapshot){
-        conditions.push(conditionSnapshot.val());
-      });
-      this.actions.updateConditions(conditions);
-    }.bind(this));
-  }
-
-  addCondition(condition){
-    console.log("In addCondition...");
-
-    this.ref = firebase.getFBConditionsHandle();
-    this.ref.push(condition);
-    this.dispatch();
-  }
-}
-
-module.exports = alt.createActions(ConditionsActions);
+module.exports = ConditionSource;
