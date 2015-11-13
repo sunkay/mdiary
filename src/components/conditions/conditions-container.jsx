@@ -1,7 +1,6 @@
 var React = require('react');
 var AltContainer = require('alt/AltContainer');
 var ConditionStore = require('../../stores/conditionStore');
-var ConditionsActions = require('../../actions/conditionActions');
 
 var ConditionsList = require('./conditions-list');
 

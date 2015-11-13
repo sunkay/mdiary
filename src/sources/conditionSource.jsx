@@ -30,11 +30,12 @@ var mockData = [
 
 var ConditionSource = {
   fetchConditions() {
-    console.log("ConditionsSource:In fetchConditions...");
 
     return {
       remote() {
         return new Promise(function (resolve, reject) {
+          console.log("ConditionsSource:In fetchConditions.remote()...");
+
           // simulate an asynchronous flow where data is fetched on
           // a remote server somewhere.
           setTimeout(function () {

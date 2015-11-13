@@ -1,6 +1,6 @@
 var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-var ConditionsActions = require('../../actions/conditionsActions');
+var ConditionsActions = require('../../actions/conditionActions');
 
 var History = require('react-router').History;
 
