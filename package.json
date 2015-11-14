@@ -8,7 +8,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "alt": "^0.17.4",
     "babelify": "^6.3.0",
     "browserify": "^9.0.3",
     "fbjs": "^0.2.1",
@@ -25,11 +24,12 @@
     "react": "^0.14.0",
     "react-addons-linked-state-mixin": "^0.14.0",
     "react-dom": "^0.14.0",
+    "react-redux": "^4.0.0",
     "react-router": "^1.0.0-rc1",
     "react-tap-event-plugin": "^0.1.8",
     "react-time": "^4.0.0",
     "reactfire": "^0.5.1",
-    "reflux": "^0.2.12",
+    "redux": "^3.0.4",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^2.4.0"
   },

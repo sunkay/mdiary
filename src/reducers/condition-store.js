@@ -1,8 +1,4 @@
-/*
-var ConditionActions = require('../actions/conditionActions');
-var firebase = require('../components/common/firebase');
-
-var mockData = [
+const initialState = [
   {
     title: '1- Headache',
     description: 'I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.'
@@ -29,41 +25,9 @@ var mockData = [
   },
 ];
 
-var ConditionSource = {
-  fetchConditions() {
-
-    return {
-      remote() {
-        return new Promise(function (resolve, reject) {
-          console.log("ConditionsSource:In fetchConditions.remote()...");
-
-          // simulate an asynchronous flow where data is fetched on
-          // a remote server somewhere.
-          setTimeout(function () {
-
-            // change this to `false` to see the error action being handled.
-            if (true) {
-              // resolve with some mock data
-              resolve(mockData);
-            } else {
-              reject('Things have broken');
-            }
-          }, 250);
-        });
-      },
-
-      local() {
-        // Never check locally, always fetch remotely.
-        return null;
-      },
-
-      success: ConditionActions.updateConditions,
-      error: ConditionActions.conditionsFailed,
-      loading: ConditionActions.fetchConditions
-    }
+export default function conditions(state=initialState, action){
+  switch(action.type){
+    default:
+      return state;
   }
-};
-
-module.exports = ConditionSource;
-
-*/
+}

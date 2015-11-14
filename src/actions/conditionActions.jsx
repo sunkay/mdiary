@@ -1,3 +1,4 @@
+/*
 var alt = require('../alt');
 
 class ConditionActions{
@@ -23,3 +24,4 @@ class ConditionActions{
 }
 
 module.exports = alt.createActions(ConditionActions);
+*/

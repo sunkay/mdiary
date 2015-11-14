@@ -1,29 +1,26 @@
 var React = require('react');
-var AltContainer = require('alt/AltContainer');
-var ConditionStore = require('../../stores/conditionStore');
-
 var ConditionsList = require('./conditions-list');
 
+import {connect} from 'react-redux';
 
 var conditionsContainer = React.createClass({
-
-  getInitialState: function() {
-    return ConditionStore.getState();
-  },
-
-  componentDidMount: function() {
-    ConditionStore.fetchConditions();
-  },
+    //var {reduxState} = this.props;
 
   render: function(){
     console.log("In Conditions container render....");
+    console.log(this.props.reduxState);
     return(
-      <AltContainer store={ConditionStore}>
-        <ConditionsList conditions={this.state.conditions} />
-      </AltContainer>
+        <ConditionsList conditions={this.props.reduxState.conditionslist} />
     );
   },
 
 });
 
-module.exports = conditionsContainer;
+
+function mapStateToProps(state) {
+  return { reduxState: state }
+}
+
+//export default connect(mapStateToProps)(conditionsContainer)
+
+module.exports = connect(mapStateToProps)(conditionsContainer);
