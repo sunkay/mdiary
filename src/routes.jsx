@@ -1,9 +1,9 @@
 var React = require('react');
-var ReactRouter = require('react-router');
+import {Router, Route, IndexRoute} from 'react-router';
 var createHashHistory =  require('history').createHashHistory;
-var Router = ReactRouter.Router;
-var Route = ReactRouter.Route;
-var IndexRoute = ReactRouter.IndexRoute;
+//var Router = ReactRouter.Router;
+//var Route = ReactRouter.Route;
+//var IndexRoute = ReactRouter.IndexRoute;
 
 var Main = require('./components/main');
 var Home = require('./components/home');
