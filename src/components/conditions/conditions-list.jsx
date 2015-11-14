@@ -1,5 +1,5 @@
-var React = require('react');
-var Condition = require('../common/card');
+import React from 'react';
+import Condition from '../common/card';
 
 module.exports = React.createClass({
   render: function(){

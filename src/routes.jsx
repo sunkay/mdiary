@@ -1,22 +1,16 @@
-var React = require('react');
+import React from 'react';
 import {Router, Route, IndexRoute} from 'react-router';
-var createHashHistory =  require('history').createHashHistory;
-//var Router = ReactRouter.Router;
-//var Route = ReactRouter.Route;
-//var IndexRoute = ReactRouter.IndexRoute;
 
-var Main = require('./components/main');
-var Home = require('./components/home');
-var Terms = require('./components/org/terms');
-var about = require('./components/org/about');
-var Privacy = require('./components/org/privacy');
-var ConditionsAdd = require('./components/conditions/conditions-add');
+import Main from './components/main';
+import Home from './components/home';
+import Terms from './components/org/terms';
+import about from './components/org/about';
+import Privacy from './components/org/privacy';
+import ConditionsAdd from'./components/conditions/conditions-add';
 
-
-var history = createHashHistory();
 
 export default(
-  <Router history={history}>
+  <Router>
     <Route path="/" component={Main}>
       <IndexRoute component={Home}/>
       <Route path="about" component={about} />

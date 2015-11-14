@@ -1,8 +1,8 @@
-var React = require('react');
-var ConditionsContainer = require('./conditions/conditions-container');
-
+import React from 'react';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
+
+import ConditionsContainer from './conditions/conditions-container';
 import * as reducers from '../reducers';
 
 const reducer = combineReducers(reducers);

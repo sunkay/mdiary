@@ -1,8 +1,8 @@
-var React = require('react');
+import React from 'react';
 
-module.exports = React.createClass({
-  render: function(){
-    console.log("Rending card title: "+this.props.title);
+export default class Card extends React.Component{
+  render(){
+    console.log("Rending card title: ", this.props.title);
     return (
       <div className="col s12 m6 l4">
         <div className="card blue-grey darken-1">
@@ -18,4 +18,4 @@ module.exports = React.createClass({
       </div>
     );
   }
-});
+}

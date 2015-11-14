@@ -1,5 +1,5 @@
-var  React = require('react');
-var ReactDOM = require('react-dom');
-var  Routes = require('./routes');
+import React from 'react';
+import {render} from 'react-dom';
+import  Routes from './routes';
 
-ReactDOM.render(Routes, document.querySelector('.component-replace'));
+render(Routes, document.querySelector('.component-replace'));
