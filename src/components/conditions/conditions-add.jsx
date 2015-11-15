@@ -19,7 +19,8 @@ module.exports = React.createClass({
     e.preventDefault();
     console.log("in handleSubmit: title= "+this.state.title+ " desc: "+this.state.description);
 
-    ConditionsActions.addCondition(this.state);
+    //ConditionsActions.addCondition(this.state);
+    this.props.onAddClick(this.state.title, this.state.description);
 
     this.history.pushState(null, '/');
   },

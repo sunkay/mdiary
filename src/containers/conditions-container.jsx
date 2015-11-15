@@ -1,5 +1,5 @@
 var React = require('react');
-var ConditionsList = require('./conditions-list');
+var ConditionsList = require('../components/conditions/conditions-list');
 
 import {connect} from 'react-redux';
 
