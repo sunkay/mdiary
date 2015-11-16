@@ -7,22 +7,22 @@ import ConditionsAdd from '../components/conditions/conditions-add';
 class conditionsAddContainer extends React.Component{
   render(){
     console.log("In Conditions add container render....");
-    console.log(this.props);
-    const { dispatch } = this.props
+    const { dispatch, reduxState } = this.props
 
     return(
         <ConditionsAdd
-            onAddClick={function(title, desc){
-              console.log("in onAddClick ", title, " ", desc);
-              dispatch(addCondition(title,desc));
-            }}
+            onAddClick={(title, desc) =>
+              dispatch(addCondition(title,desc, reduxState.conditionslist.length+1))
+            }
         />
     );
   }
 }
 
 function mapStateToProps(state) {
-  return { reduxState: state }
+  return {
+    reduxState: state
+  }
 }
 
 export default connect(mapStateToProps)(conditionsAddContainer)

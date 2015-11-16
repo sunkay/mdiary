@@ -1,25 +1,23 @@
-var React = require('react');
-var ConditionsList = require('../components/conditions/conditions-list');
-
+import React from 'react';
 import {connect} from 'react-redux';
 
-var conditionsContainer = React.createClass({
-  //const {reduxState} = this.props;
+import ConditionsList from '../components/conditions/conditions-list';
 
-  render: function(){
-    console.log("In Conditions container render2....");
-    console.log(this.props.reduxState);
-    return(
-        <ConditionsList conditions={this.props.reduxState.conditionslist} />
-    );
-  },
+class conditionsContainer extends React.Component{
+    render(){
+      console.log("In Conditions container render2....");
+      console.log(this.props.reduxState);
 
-});
+      const { reduxState } = this.props;
 
+      return(
+          <ConditionsList conditions={reduxState.conditionslist} />
+      );
+    }
+}
 
 function mapStateToProps(state) {
   return { reduxState: state }
 }
 
 export default connect(mapStateToProps)(conditionsContainer)
-//module.exports = connect(mapStateToProps)(conditionsContainer);

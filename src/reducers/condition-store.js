@@ -1,25 +1,31 @@
 const initialState = [
   {
-    title: '11- Headache',
+    id: 1,
+    title: '1- Headache',
     description: 'I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.'
   },
   {
+    id: 2,
     title: '2 - Headache',
     description: 'I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.'
   },
   {
+    id: 3,
     title: '3 - Headache',
     description: 'I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.'
   },
   {
+    id: 4,
     title: '4 - Headache',
     description: 'I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.'
   },
   {
+    id: 5,
     title: '5 - Headache',
     description: 'I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.'
   },
   {
+    id: 6,
     title: '6 - Headache',
     description: 'I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.'
   },
@@ -31,6 +37,7 @@ export default function conditions(state=initialState, action){
       return[
         ...state,
         {
+          id: action.id,
           title: action.title,
           description: action.description
         }
