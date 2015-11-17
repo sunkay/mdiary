@@ -31,6 +31,8 @@ const initialState = [
   },
 ];
 
+import _ from 'lodash';
+
 export default function conditions(state=initialState, action){
   switch(action.type){
     case 'ADD_CONDITION':
@@ -41,6 +43,17 @@ export default function conditions(state=initialState, action){
           title: action.title,
           description: action.description
         }
+      ]
+    case 'DELETE_CONDITION':
+      var x = _.remove(state, function(item){
+        if(item.id === action.id)
+          return true;
+        else {
+          return false;
+        }
+      })
+      return[
+        ...state
       ]
     default:
       return state;

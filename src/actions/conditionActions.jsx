@@ -8,3 +8,11 @@ export function addCondition(title, description, index) {
     description: description
   };
 }
+
+export function deleteCondition(id){
+  console.log("In conditionActions:deleteCondition:", id);
+  return {
+    type: 'DELETE_CONDITION',
+    id: id
+  }
+}

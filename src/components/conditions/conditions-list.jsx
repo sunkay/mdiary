@@ -10,10 +10,15 @@ module.exports = React.createClass({
     );
   },
   renderConditions: function(){
-    return this.props.conditions.map(function(condition){
-      return (
-        <Condition key={condition.id} {...condition} />
-      );
-    });
+    return (
+      this.props.conditions.map(function(condition){
+        return (
+          <Condition
+            key={condition.id} {...condition}
+            onDelete={this.props.onDelete }
+          />
+        );
+      }, this)
+    );
   }
 });
