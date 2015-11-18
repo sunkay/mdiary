@@ -26,6 +26,8 @@ module.exports = React.createClass({
   },
 
   render: function(){
+    console.log("in componentWillMount:", this.props.conditions);
+
     return (
       <div id="basic-form" className="section">
         <div className="row">

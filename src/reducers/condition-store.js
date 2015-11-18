@@ -47,13 +47,33 @@ export default function conditions(state=initialState, action){
     case 'DELETE_CONDITION':
       var x = _.remove(state, function(item){
         if(item.id === action.id)
-          return true;
+        return true;
         else {
           return false;
         }
       })
       return[
         ...state
+      ]
+    case 'UPDATE_CONDITION':
+      return[
+        ...state,
+        {
+          id: action.id,
+          title: action.title,
+          description: action.description
+        }
+      ]
+    case 'FIND_CONDITION':
+      var condition = _.find(state, function(item){
+        console.log("in Find condition: ",action.id, item.id);
+        if(item.id == action.id)
+          return true;
+        else
+          return false;
+      })
+      return[
+        condition
       ]
     default:
       return state;
