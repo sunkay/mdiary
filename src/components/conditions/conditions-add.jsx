@@ -15,18 +15,22 @@ module.exports = React.createClass({
     };
   },
 
+  componentWillMount: function(){
+    if(this.props.conditions)
+      this.replaceState(this.props.conditions);
+  },
+
   handleSubmit: function(e){
     e.preventDefault();
     console.log("in handleSubmit: title= "+this.state.title+ " desc: "+this.state.description);
 
     //ConditionsActions.addCondition(this.state);
-    this.props.onAddClick(this.state.title, this.state.description);
+    this.props.onSubmit(this.state.title, this.state.description);
 
     this.history.pushState(null, '/');
   },
 
   render: function(){
-    console.log("in componentWillMount:", this.props.conditions);
 
     return (
       <div id="basic-form" className="section">

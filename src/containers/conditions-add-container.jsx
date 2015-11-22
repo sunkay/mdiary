@@ -11,7 +11,7 @@ class conditionsAddContainer extends React.Component{
 
     return(
         <ConditionsAdd
-            onAddClick={(title, desc) =>
+            onSubmit={(title, desc) =>
               dispatch(addCondition(title,desc, reduxState.conditionslist.length+1))
             }
         />

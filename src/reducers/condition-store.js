@@ -56,25 +56,14 @@ export default function conditions(state=initialState, action){
         ...state
       ]
     case 'UPDATE_CONDITION':
-      return[
-        ...state,
-        {
-          id: action.id,
-          title: action.title,
-          description: action.description
-        }
-      ]
-    case 'FIND_CONDITION':
-      var condition = _.find(state, function(item){
-        console.log("in Find condition: ",action.id, item.id);
-        if(item.id == action.id)
-          return true;
-        else
-          return false;
-      })
-      return[
-        condition
-      ]
+        return state.map(item =>
+          item.id == action.id ?
+          Object.assign({}, item,
+            {
+              title: action.title,
+              description: action.description
+            }) : item
+          )
     default:
       return state;
   }

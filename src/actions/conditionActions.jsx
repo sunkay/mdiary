@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 
 export function addCondition(title, description, index) {
   console.log("In conditionActions:addCondition", title, description, index);
@@ -17,20 +19,23 @@ export function deleteCondition(id){
   }
 }
 
-export function findCondition(id){
-  console.log("In conditionActions:findCondition:", id);
-  return {
-    type: 'FIND_CONDITION',
-    id: id
-  }
+export function findCondition(state, id){
+  var condition = _.find(state, function(item){
+    if(item.id == id)
+      return true;
+    else
+      return false;
+  })
+  console.log("In conditionActions:findCondition:",condition, id);
+  return condition;
 }
 
 export function updateCondition(id, title, desc){
-  console.log("In conditionActions:updateCondition:", id);
+  console.log("In conditionActions:updateCondition:", id, title, desc);
   return {
     type: 'UPDATE_CONDITION',
     id: id,
     title: title,
-    description: description
+    description: desc
   }
 }

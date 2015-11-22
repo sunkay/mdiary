@@ -34,7 +34,7 @@ module.exports = React.createClass({
             </li>
             <li><hr/></li>
             <li><Link to="/condition-add">Add a Condition</Link></li>
-
+            <li><Link to="/condition-update/1">Update a Condition</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/privacy">Privacy</Link></li>
             <li><Link to="/terms">Terms</Link></li>
