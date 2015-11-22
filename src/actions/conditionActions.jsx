@@ -26,12 +26,12 @@ export function findCondition(state, id){
     else
       return false;
   })
-  console.log("In conditionActions:findCondition:",condition, id);
+  console.log("In conditionActions:findCondition:", id);
   return condition;
 }
 
 export function updateCondition(id, title, desc){
-  console.log("In conditionActions:updateCondition:", id, title, desc);
+  console.log("In conditionActions:updateCondition:", id);
   return {
     type: 'UPDATE_CONDITION',
     id: id,

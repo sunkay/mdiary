@@ -6,7 +6,7 @@ import ConditionsAdd from '../components/conditions/conditions-add';
 
 class conditionsAddContainer extends React.Component{
   render(){
-    console.log("In Conditions add container render....");
+    //console.log("In Conditions add container render....");
     const { dispatch, reduxState } = this.props
 
     return(

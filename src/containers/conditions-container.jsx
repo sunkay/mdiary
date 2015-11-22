@@ -6,9 +6,9 @@ import ConditionsList from '../components/conditions/conditions-list';
 
 class conditionsContainer extends React.Component{
     render(){
-      console.log("In Conditions container render2....");
-
       const { dispatch, reduxState } = this.props;
+
+      //console.log("In Conditions container render2....", reduxState);
 
       return(
           <ConditionsList

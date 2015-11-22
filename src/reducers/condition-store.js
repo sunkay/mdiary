@@ -45,16 +45,9 @@ export default function conditions(state=initialState, action){
         }
       ]
     case 'DELETE_CONDITION':
-      var x = _.remove(state, function(item){
-        if(item.id === action.id)
-        return true;
-        else {
-          return false;
-        }
-      })
-      return[
-        ...state
-      ]
+      return state.filter(item =>
+          item.id != action.id
+        )
     case 'UPDATE_CONDITION':
         return state.map(item =>
           item.id == action.id ?

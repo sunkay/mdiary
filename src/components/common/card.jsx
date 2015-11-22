@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class Card extends React.Component{
   render(){
@@ -16,9 +17,13 @@ export default class Card extends React.Component{
               >
               <i className="material-icons">delete</i>
             </a>
-            <a id={this.props.id} className="btn-floating">
-              <i className="material-icons">mode_edit</i>
-            </a>
+            <Link
+              to={"/condition-update/"+this.props.id}
+              id={this.props.id}
+              className="btn-floating"
+            >
+            <i className="material-icons">mode_edit</i>
+            </Link>
             <a id={this.props.id} className="btn-floating">
               <i className="material-icons">thumb_up</i>
             </a>
@@ -29,7 +34,6 @@ export default class Card extends React.Component{
   }
 
   handleDelete(e){
-    console.log("In handleDelete...", this.props.id);
     this.props.onDelete(this.props.id);
   }
 }
