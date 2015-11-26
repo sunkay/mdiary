@@ -1,4 +1,4 @@
-const initialState = [
+const mockState = [
   {
     id: 1,
     title: '1- Headache',
@@ -31,9 +31,7 @@ const initialState = [
   },
 ];
 
-import _ from 'lodash';
-
-export default function conditions(state=initialState, action){
+export function conditions(state=mockState, action){
   switch(action.type){
     case 'ADD_CONDITION':
       return[

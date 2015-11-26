@@ -6,13 +6,13 @@ import ConditionsList from '../components/conditions/conditions-list';
 
 class conditionsContainer extends React.Component{
     render(){
-      const { dispatch, reduxState } = this.props;
+      const { dispatch, conditions } = this.props;
 
       //console.log("In Conditions container render2....", reduxState);
 
       return(
           <ConditionsList
-            conditions={reduxState.conditionslist}
+            conditions={conditions}
             onDelete={(id) =>
               dispatch(deleteCondition(id))
             }
@@ -22,7 +22,7 @@ class conditionsContainer extends React.Component{
 }
 
 function mapStateToProps(state) {
-  return { reduxState: state }
+  console.log("in conditionsContainer:state ", state.default.conditions);
+  return { conditions: state.default.conditions }
 }
-
 export default connect(mapStateToProps)(conditionsContainer)
