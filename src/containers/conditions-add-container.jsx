@@ -12,7 +12,7 @@ class conditionsAddContainer extends React.Component{
     return(
         <ConditionsAdd
             onSubmit={(title, desc) =>
-              dispatch(addCondition(title,desc, conditions.length+1))
+              dispatch(addCondition(title,desc))
             }
         />
     );

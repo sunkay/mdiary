@@ -13,20 +13,20 @@ var fbref = new Firebase('https://m-diary.firebaseio.com/conditions');
 
 export function addCondition(title, description) {
   console.log("In conditionActions:addCondition", title, description);
-  return {
-    type: ADD_CONDITION,
+  fbref.push({
     title: title,
     description: description
+  });
+  return {
+    type: ADD_CONDITION,
   };
 }
 
 export function deleteCondition(id){
   console.log("In conditionActions:deleteCondition:", id);
-  var child = fbref.child(id);
-  child.remove();
+  fbref.child(id).remove();
   return {
     type: DELETE_CONDITION,
-    id: id
   }
 }
 
@@ -75,7 +75,7 @@ export function fetchConditions() {
   return dispatch => {
     dispatch(requestConditions());
     fbref.on("value", function(snapshot){
-      console.log("in fetchConditions:", )
+      console.log("in fetchConditions:", snapshot.val())
       dispatch(receiveConditions(snapshot.val()));
     });
   }

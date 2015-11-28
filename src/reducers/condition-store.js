@@ -67,23 +67,7 @@ export function conditions(state={}, action){
         lastUpdated: action.receivedAt
       })
     case ADD_CONDITION:
-      return[
-        ...state,
-        {
-          id: action.id,
-          title: action.title,
-          description: action.description
-        }
-      ]
     case UPDATE_CONDITION:
-        return state.map(item =>
-          item.id == action.id ?
-          Object.assign({}, item,
-            {
-              title: action.title,
-              description: action.description
-            }) : item
-          )
     case DELETE_CONDITION:
     default:
       return state;
