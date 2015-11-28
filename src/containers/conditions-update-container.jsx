@@ -8,7 +8,7 @@ class conditionsUpdateContainer extends React.Component{
 
   render(){
     const { dispatch, condition } = this.props
-    console.log("in conditionsUpdateContainer:render...", condition);
+    //console.log("in conditionsUpdateContainer:render...", condition);
 
     return(
         <ConditionsAdd
