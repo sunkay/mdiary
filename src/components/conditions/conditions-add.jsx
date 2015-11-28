@@ -18,9 +18,13 @@ module.exports = React.createClass({
   componentWillMount: function(){
     if(this.props.conditions)
       this.replaceState(this.props.conditions);
-    //console.log("conditionAdd: CWM", this.state);
   },
 
+  componentWillReceiveProps: function(props){
+    if(props.conditions)
+      this.replaceState(props.conditions);
+  },
+  
   handleSubmit: function(e){
     e.preventDefault();
 
