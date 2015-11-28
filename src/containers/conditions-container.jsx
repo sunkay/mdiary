@@ -3,26 +3,32 @@ import {connect} from 'react-redux';
 
 import {deleteCondition} from '../actions/conditionActions';
 import ConditionsList from '../components/conditions/conditions-list';
+import Spinner from '../components/common/spinner';
 
 class conditionsContainer extends React.Component{
     render(){
       const { dispatch, conditions } = this.props;
 
-      //console.log("In Conditions container render2....", reduxState);
+      console.log("In Conditions container render....", conditions);
 
-      return(
-          <ConditionsList
-            conditions={conditions}
-            onDelete={(id) =>
-              dispatch(deleteCondition(id))
-            }
-          />
-      );
+      if(conditions.isFetching)
+        return(
+          <Spinner />
+        );
+      else
+        return(
+            <ConditionsList
+              conditions={conditions.items}
+              onDelete={(id) =>
+                dispatch(deleteCondition(id))
+              }
+            />
+        );
     }
 }
 
 function mapStateToProps(state) {
-  console.log("in conditionsContainer:state ", state.default.conditions);
+  console.log("in conditionsContainer:state ", state);
   return { conditions: state.default.conditions }
 }
 export default connect(mapStateToProps)(conditionsContainer)

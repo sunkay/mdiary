@@ -5,20 +5,26 @@ module.exports = React.createClass({
   render: function(){
     return (
       <div className="row">
-        {this.renderConditions()}
+        {this.renderConditions(this.props.conditions)}
       </div>
     );
   },
-  renderConditions: function(){
+
+  renderConditions: function(conditions){
     return (
-      this.props.conditions.map(function(condition){
-        return (
-          <Condition
-            key={condition.id} {...condition}
-            onDelete={this.props.onDelete }
-          />
-        );
-      }, this)
+      // iterate over the object
+      Object.keys(conditions)
+        .map(function(key){
+            return (
+              <Condition
+                key={key}
+                id={key}
+                {...conditions[key]}
+                onDelete={this.props.onDelete }
+              />
+            );
+        },
+      this)
     );
   }
 });

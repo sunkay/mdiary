@@ -1,5 +1,6 @@
 import React from 'react';
 import {Router, Route, IndexRoute} from 'react-router';
+import {fetchConditions} from './actions/conditionActions';
 
 import Main from './components/main';
 import Home from './components/home';
@@ -14,6 +15,7 @@ import {Provider} from 'react-redux';
 import createStore from './create-redux-store'
 
 const store = createStore();
+store.dispatch(fetchConditions());
 
 export default(
   <Provider store={store}>

@@ -31,9 +31,42 @@ const mockState = [
   },
 ];
 
-export function conditions(state=mockState, action){
+/*
+default:
+{
+  isFetching: true,
+  lastUpdated: date,
+  conditions:[
+    {
+      id: 1,
+      title: "",
+      description: ""
+    }
+  ]
+}
+*/
+
+import {
+  ADD_CONDITION,
+  DELETE_CONDITION,
+  UPDATE_CONDITION,
+  REQUEST_CONDITIONS,
+  RECEIVE_CONDITIONS
+} from '../actions/conditionActions';
+
+export function conditions(state={}, action){
   switch(action.type){
-    case 'ADD_CONDITION':
+    case REQUEST_CONDITIONS:
+      return Object.assign({}, state, {
+          isFetching: true
+        })
+    case RECEIVE_CONDITIONS:
+      return Object.assign({}, state, {
+        isFetching: false,
+        items: action.conditions,
+        lastUpdated: action.receivedAt
+      })
+    case ADD_CONDITION:
       return[
         ...state,
         {
@@ -42,11 +75,7 @@ export function conditions(state=mockState, action){
           description: action.description
         }
       ]
-    case 'DELETE_CONDITION':
-      return state.filter(item =>
-          item.id != action.id
-        )
-    case 'UPDATE_CONDITION':
+    case UPDATE_CONDITION:
         return state.map(item =>
           item.id == action.id ?
           Object.assign({}, item,
@@ -55,6 +84,7 @@ export function conditions(state=mockState, action){
               description: action.description
             }) : item
           )
+    case DELETE_CONDITION:
     default:
       return state;
   }

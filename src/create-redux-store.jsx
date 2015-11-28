@@ -8,7 +8,8 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 // You can go and see the code for this middleware, it's not very complicated and makes a good
 // exercise to sharpen your understanding on middlewares.
-import promiseMiddleware from './promise-middleware'
+//import promiseMiddleware from './promise-middleware'
+import thunkMiddleware from 'redux-thunk';
 // We'll just have one reducer in this application but the ES6 import notation below is
 // pretty interesting to import and produce a reducers hash in one go. Have a look in
 // ./reducers.js to see what our reducer actually do (no magic there).
@@ -22,7 +23,7 @@ import * as reducers from './reducers'
 // We're not passing any data here but it's good to know about this createStore's ability.
 export default function(data) {
   var reducer = combineReducers(reducers)
-  var finalCreateStore = applyMiddleware(promiseMiddleware)(createStore)
+  var finalCreateStore = applyMiddleware(thunkMiddleware)(createStore)
   var store = finalCreateStore(reducer, data)
 
   return store
