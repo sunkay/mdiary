@@ -31,23 +31,32 @@ export function deleteCondition(id){
 }
 
 export function findCondition(state, id){
-  var condition = _.find(state, function(item){
-    if(item.id == id)
-      return true;
-    else
-      return false;
-  })
-  console.log("In conditionActions:findCondition:", id);
-  return condition;
+  console.log("findCondition:state.items", id)
+
+  if(state.items == null) return;
+
+  var found = Object.keys(state.items).map(key => {
+    console.log("findCondition:key", key, id);
+    if(key === id){
+      console.log("findCondition:state.found");
+      return state.items[key];
+    }
+  });
+  found = found.filter(function(e){return e});
+  console.log("findCondition:state.found", found);
+
+  return found[0];
 }
 
 export function updateCondition(id, title, desc){
   console.log("In conditionActions:updateCondition:", id);
-  return {
-    type: UPDATE_CONDITION,
-    id: id,
+
+  fbref.child(id).set({
     title: title,
     description: desc
+  });
+  return {
+    type: UPDATE_CONDITION,
   }
 }
 
