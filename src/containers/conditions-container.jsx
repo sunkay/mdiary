@@ -9,7 +9,7 @@ class conditionsContainer extends React.Component{
     render(){
       const { dispatch, conditions } = this.props;
 
-      console.log("In Conditions container render....", conditions);
+      //console.log("In Conditions container render....", conditions);
 
       if(conditions.isFetching)
         return(

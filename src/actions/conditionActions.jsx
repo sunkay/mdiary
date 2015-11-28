@@ -12,7 +12,7 @@ var fbref = new Firebase('https://m-diary.firebaseio.com/conditions');
 
 
 export function addCondition(title, description) {
-  console.log("In conditionActions:addCondition", title, description);
+  //console.log("In conditionActions:addCondition", title, description);
   fbref.push({
     title: title,
     description: description
@@ -23,7 +23,7 @@ export function addCondition(title, description) {
 }
 
 export function deleteCondition(id){
-  console.log("In conditionActions:deleteCondition:", id);
+  //console.log("In conditionActions:deleteCondition:", id);
   fbref.child(id).remove();
   return {
     type: DELETE_CONDITION,
@@ -31,25 +31,25 @@ export function deleteCondition(id){
 }
 
 export function findCondition(state, id){
-  console.log("findCondition:state.items", id)
+  //console.log("findCondition:state.items", id)
 
   if(state.items == null) return;
 
   var found = Object.keys(state.items).map(key => {
-    console.log("findCondition:key", key, id);
+    //console.log("findCondition:key", key, id);
     if(key === id){
-      console.log("findCondition:state.found");
+      //console.log("findCondition:state.found");
       return state.items[key];
     }
   });
   found = found.filter(function(e){return e});
-  console.log("findCondition:state.found", found);
+  //console.log("findCondition:state.found", found);
 
   return found[0];
 }
 
 export function updateCondition(id, title, desc){
-  console.log("In conditionActions:updateCondition:", id);
+  //console.log("In conditionActions:updateCondition:", id);
 
   fbref.child(id).set({
     title: title,
@@ -63,14 +63,14 @@ export function updateCondition(id, title, desc){
 // FETCH Conditions async
 
 export function requestConditions() {
-  console.log("conditionActions - requestConditions...");
+  //console.log("conditionActions - requestConditions...");
   return {
     type: REQUEST_CONDITIONS,
   }
 }
 
 export function receiveConditions(conditions) {
-  console.log("conditionActions - receiveConditions...");
+  //console.log("conditionActions - receiveConditions...");
 
   return {
     type: RECEIVE_CONDITIONS,
@@ -84,7 +84,7 @@ export function fetchConditions() {
   return dispatch => {
     dispatch(requestConditions());
     fbref.on("value", function(snapshot){
-      console.log("in fetchConditions:", snapshot.val())
+      //console.log("in fetchConditions:", snapshot.val())
       dispatch(receiveConditions(snapshot.val()));
     });
   }
