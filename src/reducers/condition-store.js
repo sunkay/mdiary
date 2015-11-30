@@ -34,15 +34,24 @@ const mockState = [
 /*
 default:
 {
-  isFetching: true,
-  lastUpdated: date,
-  conditions:[
-    {
-      id: 1,
-      title: "",
-      description: ""
-    }
-  ]
+  users:{
+    items:[
+      id: {
+        uid
+        name
+      }
+    ]
+  },
+  conditions:{
+    isFetching: true,
+    lastUpdated: date,
+    items: [
+      ID: {
+        title:
+        description:
+      }
+    ]
+  }
 }
 */
 

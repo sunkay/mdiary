@@ -11,15 +11,16 @@ module.exports = React.createClass({
     });
   },
   render: function(){
-    var now = new Date();
-    now.setHours(now.getHours() + 4);
     return (
       <nav className="light-blue lighten-1" role="navigation">
         <div className="nav-wrapper">
           <Link id="logo-container" to="/" className="center brand-logo"> mDiary </Link>
-          <ul className="right hide-on-med-and-down">
+          <ul className="right">
             <li>
-              <p><Time value={now} format="MM.DD HH:mm" /></p>
+              <Link to="/login"> Login </Link>
+            </li>
+            <li>
+              <Link to="/register"> Sign Up </Link>
             </li>
           </ul>
 
