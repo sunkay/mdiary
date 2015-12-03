@@ -28,6 +28,7 @@ class conditionsContainer extends React.Component{
 }
 
 function mapStateToProps(state) {
+  console.log("conditionsContainer:mapStateToProps:", state);
   return { conditions: state.default.conditions }
 }
 export default connect(mapStateToProps)(conditionsContainer)

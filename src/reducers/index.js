@@ -1,8 +1,9 @@
 import {combineReducers} from 'redux';
 import {conditions} from './condition-store';
+import {user} from './user-store';
+
 
 export default combineReducers({
-  conditions
+  conditions,
+  user
 })
-
-//export { default as conditionslist } from './condition-store';
