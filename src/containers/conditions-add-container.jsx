@@ -21,7 +21,7 @@ class conditionsAddContainer extends React.Component{
 
 function mapStateToProps(state) {
   return {
-    conditions: state.default.conditions
+    conditions: state.conditions
   }
 }
 

@@ -25,7 +25,7 @@ class conditionsUpdateContainer extends React.Component{
 // should use reselct and memoized selectors... what ever that means..
 function mapStateToProps(state, ownProps) {
   return {
-    condition: findCondition(state.default.conditions, ownProps.params.id)
+    condition: findCondition(state.conditions, ownProps.params.id)
   }
 }
 

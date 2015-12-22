@@ -1,11 +1,11 @@
 var React = require('react');
-var Header = require('./header');
+var HeaderContainer = require('../containers/header-container');
 
 module.exports = React.createClass({
     render: function(){
       return (
         <div>
-          <Header />
+          <HeaderContainer />
           {this.props.children}
         </div>
       );

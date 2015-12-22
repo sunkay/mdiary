@@ -11,17 +11,12 @@ module.exports = React.createClass({
     });
   },
   render: function(){
-    var now = new Date();
-    now.setHours(now.getHours() + 4);
     return (
       <nav className="light-blue lighten-1" role="navigation">
         <div className="nav-wrapper">
           <Link id="logo-container" to="/" className="center brand-logo"> mDiary </Link>
-          <ul className="right hide-on-med-and-down">
-            <li>
-              <p><Time value={now} format="MM.DD HH:mm" /></p>
-            </li>
-          </ul>
+
+            {this.renderLoginLinks()}
 
           <a href="#" data-activates="slide-out" className="button-collapse show-on-large" >
             <i className="mdi-navigation-menu"></i>
@@ -43,5 +38,29 @@ module.exports = React.createClass({
         </div>
       </nav>
     );
+  },
+
+  renderLoginLinks: function(){
+    console.log("renderLoginLinks: loggedIn", this.props.loggedIn, this.props.username);
+    if(this.props.loggedIn){
+      return (
+        <ul className="right">
+          <li>
+            <Link to="/logout"> Logout </Link>
+          </li>
+        </ul>
+      );
+    } else {
+        return(
+          <ul className="right">
+            <li>
+              <Link to="/login"> Login </Link>
+            </li>
+            <li>
+              <Link to="/register"> Sign Up </Link>
+            </li>
+          </ul>
+        );
+    }
   }
 });
