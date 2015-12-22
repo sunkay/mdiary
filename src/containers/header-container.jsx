@@ -19,8 +19,8 @@ class registerContainer extends React.Component{
 }
 
 function mapStateToProps(state) {
-  console.log("conditionsContainer:mapStateToProps:", state.default.user);
-  return { user: state.default.user }
+  console.log("headerContainer:mapStateToProps:", state.user);
+  return { user: state.user }
 }
 
 export default connect(mapStateToProps)(registerContainer)

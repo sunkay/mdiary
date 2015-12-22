@@ -1,5 +1,15 @@
 import React from 'react';
 import {render} from 'react-dom';
-import  Routes from './routes';
+import Root from './containers/Root'
+import configureStore from './create-redux-store'
+import {fetchConditions} from './actions/conditionActions'
+import {monitorAuth} from './actions/authActions'
 
-render(Routes, document.querySelector('.component-replace'));
+const store = configureStore()
+store.dispatch(fetchConditions());
+store.dispatch(monitorAuth());
+
+render(
+  <Root store={store} />,
+  document.querySelector('.component-replace')
+);

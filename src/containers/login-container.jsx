@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {createHistory} from 'history';
+import {pushState} from 'redux-router';
 
 import {loginUser} from '../actions/authActions';
 import Login from '../components/auth/login-form';
@@ -16,11 +16,7 @@ class loginContainer extends React.Component{
               (email, password) =>
               {
                 loginUser(email,password);
-
-                let history = createHistory();
-                
-                // transition to main page
-                history.pushState(null, '/');
+                this.props.pushState(null, '/');
               }
             }
         />
@@ -28,4 +24,11 @@ class loginContainer extends React.Component{
   }
 }
 
-export default connect()(loginContainer)
+function mapStateToProps(state){
+  return {
+  }
+}
+
+export default connect(mapStateToProps, {
+  pushState
+})(loginContainer)

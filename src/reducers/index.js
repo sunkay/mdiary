@@ -1,9 +1,13 @@
 import {combineReducers} from 'redux';
 import {conditions} from './condition-store';
 import {user} from './user-store';
+import {routerStateReducer as router} from 'redux-router'
 
 
-export default combineReducers({
+const rootReducer = combineReducers({
   conditions,
-  user
+  user,
+  router
 })
+
+export default rootReducer
