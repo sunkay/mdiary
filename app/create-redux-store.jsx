@@ -5,7 +5,7 @@ import { syncReduxAndRouter } from 'redux-simple-router'
 
 
 const finalCreateStore = compose(
-  applyMiddleware(thunkMiddleware),
+  applyMiddleware(thunkMiddleware)
 )(createStore)
 
 export default function configureStore(initialState){
