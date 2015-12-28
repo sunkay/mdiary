@@ -21,7 +21,7 @@
     "react-time": "^4.0.0",
     "reactfire": "^0.5.1",
     "redux": "^3.0.4",
-    "redux-router": "^1.0.0-beta5",
+    "redux-simple-router": "^1.0.2",
     "redux-thunk": "^1.0.0"
   },
   "devDependencies": {
