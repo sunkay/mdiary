@@ -61,7 +61,8 @@ module.exports = React.createClass({
                     </div>
                     <div className="row">
                       <div className="input-field col s12">
-                        <button className="btn cyan waves-effect waves-light right"
+                        <button id="login-form-submit"
+                          className="btn cyan waves-effect waves-light right"
                           onClick={this.handleLogin}
                           type="submit"
                           name="action">Login
