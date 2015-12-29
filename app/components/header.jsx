@@ -46,7 +46,7 @@ module.exports = React.createClass({
       return (
         <ul className="right">
           <li>
-            <Link to="/logout"> Logout </Link>
+            <Link id="logout" to="/logout"> Logout </Link>
           </li>
         </ul>
       );
@@ -54,10 +54,10 @@ module.exports = React.createClass({
         return(
           <ul className="right">
             <li>
-              <Link to="/login"> Login </Link>
+              <Link id="login" to="/login"> Login </Link>
             </li>
             <li>
-              <Link to="/register"> Sign Up </Link>
+              <Link id="register" to="/register"> Sign Up </Link>
             </li>
           </ul>
         );

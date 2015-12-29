@@ -11,7 +11,7 @@ module.exports = React.createClass({
   render: function(){
     return (
       <div className="container">
-        <h3>
+        <h3 id="logout-text">
           You are now logged out. Thank you for visiting.
         </h3>
 
