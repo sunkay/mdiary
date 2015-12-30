@@ -13,7 +13,7 @@
       .setValue('#email', 'sun@y.com')
       .setValue('#password', '12345')
       .click('#login-form-submit')
-      .waitForVisible('#logout', 2000)
+      .waitForVisible('#logout', 3000)
       .getText('#logout')
       .should.eventually.be.equal('Logout');
   });

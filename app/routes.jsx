@@ -26,7 +26,7 @@ export default(
     <Route path="logout" component={Logout} />
     <Route path="register" component={RegisterContainer} />
     <Route path="condition-add" component={ConditionsAddContainer} />
-    <Route path="/:num" component={Home} />
     <Route path="condition-update/:id" component={ConditionsUpdateContainer} />
+    <Route path="/:num" component={Home} />
   </Route>
 );
