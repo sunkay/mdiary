@@ -7,7 +7,12 @@ import Spinner from '../components/common/spinner';
 
 class conditionsContainer extends React.Component{
     componentWillMount(){
-      this.props.dispatch(fetchConditions());
+      var num = Number(this.props.num);
+      if(!this.props.num)
+        num = 10;
+
+      //console.log("conditionsContainer:CWM:num", num);
+      this.props.dispatch(fetchConditions(num));
     }
 
     render(){
@@ -32,7 +37,7 @@ class conditionsContainer extends React.Component{
 }
 
 function mapStateToProps(state) {
-  console.log("conditionsContainer:mapStateToProps:", state);
+  //console.log("conditionsContainer:mapStateToProps:", state);
   return { conditions: state.conditions }
 }
 export default connect(mapStateToProps)(conditionsContainer)

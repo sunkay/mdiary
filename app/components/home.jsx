@@ -5,7 +5,7 @@ module.exports = React.createClass({
   render: function(){
     return (
       <div className="container">
-          <ConditionsContainer />
+          <ConditionsContainer num={this.props.params.num}/>
       </div>
     );
   }

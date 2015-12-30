@@ -6,7 +6,6 @@ import routes from './routes';
 export default class Root extends React.Component{
   render(){
     const {store, history} = this.props
-    console.log("In Root Render-1");
 
     return(
       <Provider store={store}>

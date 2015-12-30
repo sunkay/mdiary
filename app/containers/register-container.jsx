@@ -6,7 +6,7 @@ import Register from '../components/auth/register-form';
 
 class registerContainer extends React.Component{
   render(){
-    console.log("registerContainer:render");
+    //console.log("registerContainer:render");
     const { dispatch } = this.props
 
     return(

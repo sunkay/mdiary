@@ -6,7 +6,7 @@ import history from '../history';
 
 class loginContainer extends React.Component{
   render(){
-    console.log("loginContainer:render");
+    //console.log("loginContainer:render");
 
     return(
         <Login

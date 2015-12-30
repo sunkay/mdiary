@@ -6,7 +6,7 @@ import Header from '../components/header';
 
 class registerContainer extends React.Component{
   render(){
-    console.log("registerContainer:render");
+    //console.log("registerContainer:render");
     const { user, dispatch } = this.props
 
     return(
@@ -19,7 +19,7 @@ class registerContainer extends React.Component{
 }
 
 function mapStateToProps(state) {
-  console.log("headerContainer:mapStateToProps:", state.user);
+  //console.log("headerContainer:mapStateToProps:", state.user);
   return { user: state.user }
 }
 
