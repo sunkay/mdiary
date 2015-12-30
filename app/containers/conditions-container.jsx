@@ -7,6 +7,8 @@ import Spinner from '../components/common/spinner';
 
 class conditionsContainer extends React.Component{
     componentWillMount(){
+
+      // Pagination: default conditions to fetch 10
       var num = Number(this.props.num);
       if(!this.props.num)
         num = 10;

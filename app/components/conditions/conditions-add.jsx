@@ -24,7 +24,7 @@ module.exports = React.createClass({
     if(props.conditions)
       this.replaceState(props.conditions);
   },
-  
+
   handleSubmit: function(e){
     e.preventDefault();
 
@@ -47,7 +47,7 @@ module.exports = React.createClass({
                     <div className="input-field col s12">
                       <input
                         placeholder="Enter title"
-                        id="name2"
+                        id="title"
                         type="text"
                         valueLink={this.linkState('title')}/>
                       <label htmlFor="title" className="active">Title</label>
@@ -57,7 +57,7 @@ module.exports = React.createClass({
                     <div className="input-field col s12">
                       <textarea
                         placeholder="Enter description of the condition"
-                        id="message2"
+                        id="description"
                         className="materialize-textarea"
                         valueLink={this.linkState('description')}
                         >
@@ -68,6 +68,7 @@ module.exports = React.createClass({
                     <div className="row">
                       <div className="input-field col s12">
                         <button className="btn cyan waves-effect waves-light right"
+                          id="condition-submit"
                           onClick={this.handleSubmit}
                           type="submit"
                           name="action">Submit

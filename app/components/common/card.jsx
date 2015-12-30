@@ -20,7 +20,7 @@ export default class Card extends React.Component{
             <Link
               to={"/condition-update/"+this.props.id}
               id={this.props.id}
-              className="btn-floating"
+              className="condition-update btn-floating"
             >
             <i className="material-icons">mode_edit</i>
             </Link>
