@@ -79,11 +79,11 @@ export function receiveConditions(conditions) {
   }
 }
 
-export function fetchConditions() {
+export function fetchConditions(num) {
   // thunk
   return dispatch => {
     dispatch(requestConditions());
-    fbref.on("value", function(snapshot){
+    fbref.limitToFirst(Number(num)).on("value", function(snapshot){
       //console.log("in fetchConditions:", snapshot.val())
       dispatch(receiveConditions(snapshot.val()));
     });

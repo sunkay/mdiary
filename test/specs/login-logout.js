@@ -1,11 +1,11 @@
-describe('Authentication Test Suite', function(){
-  it('should click on the login button and login form presented', function() {
-    return browser
-      .url('http://localhost:8080')
-      .click('#login')
-      .getText('#login-form-submit')
-      .should.eventually.be.equal('LOGIN');
-  });
+  describe('Authentication Test Suite', function(){
+    it('should click on the login button and login form presented', function() {
+      return browser
+        .url('http://localhost:8080')
+        .click('#login')
+        .getText('#login-form-submit')
+        .should.eventually.be.equal('LOGIN');
+    });
 
   it('should click on the login button submit login info and a logout link is visible', function() {
     return browser
@@ -25,4 +25,5 @@ describe('Authentication Test Suite', function(){
       .should.eventually
       .be.equal("You are now logged out. Thank you for visiting.");
   });
+
 });

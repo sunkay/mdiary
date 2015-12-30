@@ -41,7 +41,7 @@ module.exports = React.createClass({
   },
 
   renderLoginLinks: function(){
-    console.log("renderLoginLinks: loggedIn", this.props.loggedIn, this.props.username);
+    //console.log("renderLoginLinks: loggedIn", this.props.loggedIn, this.props.username);
     if(this.props.loggedIn){
       return (
         <ul className="right">

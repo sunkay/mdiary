@@ -8,10 +8,6 @@ var pkg = require('./package.json');
 var Clean = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-// testing
-var webdriverio = requre('webdriverio');
-var wd-options = require('./wdio.conf.js');
-
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
   app: path.join(__dirname, 'app'),
@@ -127,12 +123,3 @@ if(TARGET === 'build' || TARGET === 'stats' || TARGET === 'deploy') {
     ]
   });
 }
-
-/*
-if(TARGET === 'test'){
-  webdriverio.
-    remote(options).
-    init();
-
-}
-*/
