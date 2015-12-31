@@ -83,9 +83,14 @@ export function fetchConditions(num) {
   // thunk
   return dispatch => {
     dispatch(requestConditions());
-    fbref.limitToFirst(Number(num)).on("value", function(snapshot){
-      //console.log("in fetchConditions:", snapshot.val())
-      dispatch(receiveConditions(snapshot.val()));
+    fbref.orderByChild("title").limitToFirst(Number(num)).on("value",
+      function(snapshot){
+        var data = [];
+        snapshot.forEach(function(childSnap){
+          data[childSnap.key()] = childSnap.val();
+        });
+        //console.log("in fetchConditions:", data);
+        dispatch(receiveConditions(data));
     });
   }
 }
