@@ -7,11 +7,11 @@ export default class Card extends React.Component{
       <div className="col s12 m6 l4">
         <div id="card" className="card blue-grey darken-1">
           <div className="card-content white-text">
-            <span className="card-title">{this.props.title}</span>
+            <span id={this.props.id} className="card-title">{this.props.title}</span>
             <p>{this.props.description}</p>
           </div>
           <div  className="card-action">
-            <a id={this.props.id}
+            <a id={this.props.title}
               className="btn-floating"
               onClick={this.handleDelete.bind(this)}
               >

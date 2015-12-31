@@ -13,6 +13,7 @@ class conditionsUpdateContainer extends React.Component{
     return(
         <ConditionsAdd
             conditions={condition}
+            id={this.props.params.id}
             onSubmit={(title, desc) =>
               dispatch(updateCondition(this.props.params.id, title,desc))
             }

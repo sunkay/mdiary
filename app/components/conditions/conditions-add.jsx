@@ -67,8 +67,8 @@ module.exports = React.createClass({
                     </div>
                     <div className="row">
                       <div className="input-field col s12">
-                        <button className="btn cyan waves-effect waves-light right"
-                          id="condition-submit"
+                        <button className="condition-submit btn cyan waves-effect waves-light right"
+                          id={this.props.id}
                           onClick={this.handleSubmit}
                           type="submit"
                           name="action">Submit
