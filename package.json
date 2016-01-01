@@ -13,7 +13,7 @@
   "author": "sunkay",
   "license": "MIT",
   "dependencies": {
-    "fbjs": "^0.2.1",
+    "fbjs": "^0.6.0",
     "firebase": "^2.3.1",
     "history": "^1.11.1",
     "lodash": "^3.10.1",
@@ -22,7 +22,7 @@
     "react-dom": "^0.14.0",
     "react-redux": "^4.0.0",
     "react-router": "^1.0.0",
-    "react-tap-event-plugin": "^0.1.8",
+    "react-tap-event-plugin": "^0.2.1",
     "react-time": "^4.0.0",
     "reactfire": "^0.5.1",
     "redux": "^3.0.4",
@@ -54,6 +54,6 @@
     "webdriverio": "^3.4.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0",
-    "webpack-merge": "^0.4.0"
+    "webpack-merge": "^0.7.0"
   }
 }
