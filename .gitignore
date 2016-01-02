@@ -2,3 +2,5 @@ node_modules/
 build/
 main.js
 style.css
+*.log
+.DS_Store
