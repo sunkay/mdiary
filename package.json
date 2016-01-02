@@ -8,7 +8,9 @@
     "stats": "webpack --profile --json > stats.json",
     "deploy": "node ./lib/deploy.js",
     "selenium": "selenium-standalone start",
-    "test": "wdio ./wdio.conf.js"
+    "test": "wdio ./wdio.conf.js",
+    "unit-test": "mocha --opts ./test/specs/unit/mocha.opts",
+    "unit-test:watch": "mocha --opts ./test/specs/unit/mocha.opts --watch --reporter min"
   },
   "author": "sunkay",
   "license": "MIT",
@@ -31,6 +33,7 @@
     "selenium-standalone": "^4.8.0"
   },
   "devDependencies": {
+    "babel": "^6.3.26",
     "babel-loader": "^6.2.0",
     "babel-plugin-react-transform": "^2.0.0",
     "babel-plugin-syntax-class-properties": "^6.3.13",
@@ -45,10 +48,14 @@
     "chai-as-promised": "^5.2.0",
     "clean-webpack-plugin": "^0.1.5",
     "css-loader": "^0.23.1",
+    "expect": "^1.13.4",
+    "expect-jsx": "^2.2.1",
     "extract-text-webpack-plugin": "^0.9.1",
     "gh-pages": "^0.8.0",
     "html-webpack-plugin": "^1.7.0",
     "mocha": "^2.3.4",
+    "react-addons-test-utils": "^0.14.5",
+    "react-tools": "^0.13.3",
     "react-transform-hmr": "^1.0.1",
     "style-loader": "^0.13.0",
     "webdriverio": "^3.4.0",

@@ -10,7 +10,7 @@ exports.config = {
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
   specs: [
-    './test/specs/**/*.js'
+    './test/specs/e2e/**/*.js'
   ],
   // Patterns to exclude.
   exclude: [
@@ -92,7 +92,8 @@ exports.config = {
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
   mochaOpts: {
-    ui: 'bdd'
+    ui: 'bdd',
+    compilers: '.:./test/compiler.js'
   },
 
   //
