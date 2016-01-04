@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import {fb} from 'firebase';
+import Firebase from 'firebase';
 
 export const ADD_CONDITION = "ADD_CONDITION"
 export const DELETE_CONDITION = "DELETE_CONDITION"
