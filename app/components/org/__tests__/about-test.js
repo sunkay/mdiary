@@ -4,7 +4,7 @@ import {createRenderer} from 'react-addons-test-utils';
 import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
 
-import About from '../../../app/components/org/about.jsx';
+import About from '../about';
 
 describe('About', () => {
   it('works', () => {

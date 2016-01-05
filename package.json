@@ -9,8 +9,7 @@
     "deploy": "node ./lib/deploy.js",
     "selenium": "selenium-standalone start",
     "test": "wdio ./wdio.conf.js",
-    "unit-test": "mocha --opts ./test/specs/unit/mocha.opts",
-    "unit-test:watch": "mocha --opts ./test/specs/unit/mocha.opts --watch --reporter min"
+    "karma": "karma start"
   },
   "author": "sunkay",
   "license": "MIT",
@@ -53,6 +52,11 @@
     "extract-text-webpack-plugin": "^0.9.1",
     "gh-pages": "^0.8.0",
     "html-webpack-plugin": "^1.7.0",
+    "karma": "^0.13.17",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-mocha": "^0.2.1",
+    "karma-sourcemap-loader": "^0.3.6",
+    "karma-webpack": "^1.7.0",
     "mocha": "^2.3.4",
     "react-addons-test-utils": "^0.14.5",
     "react-tools": "^0.13.3",
