@@ -4,13 +4,8 @@ import {createRenderer} from 'react-addons-test-utils';
 import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
 
-var Firebase = require('firebase');
-
-import ConditionsList from '../../../../app/components/conditions/conditions-list';
-import {conditionsAddContainer as ConditionsAddContainer} from '../../../../app/containers/conditions-add-container';
-import ConditionsAdd from '../../../../app/components/conditions/conditions-add';
-
-import Card from '../../../../app/components/common/card';
+import ConditionsList from '../conditions-list';
+import Card from '../../common/card';
 
 
 describe('Conditions', () => {
@@ -54,23 +49,6 @@ describe('Conditions', () => {
         description={conditionsMock[1].description}
         onDelete={onDelete} />
     </div>;
-
-    expect(actualElement).toEqualJSX(expectedElement);
-  });
-
-
-  it('should add a condition. testing conditions-add', () => {
-    let renderer = createRenderer();
-    renderer.render(<ConditionsAddContainer />);
-    let actualElement = renderer.getRenderOutput();
-
-    let onSubmitFunc = function(title){};
-    let expectedElement =
-        <ConditionsAdd
-          onSubmit={onSubmitFunc}
-        />
-
-    console.log(actualElement, expectedElement);
 
     expect(actualElement).toEqualJSX(expectedElement);
   });
