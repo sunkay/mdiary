@@ -34,7 +34,9 @@
   },
   "devDependencies": {
     "babel": "^6.3.26",
+    "babel-core": "^6.3.26",
     "babel-loader": "^6.2.0",
+    "babel-plugin-object-assign": "^1.2.1",
     "babel-plugin-react-transform": "^2.0.0",
     "babel-plugin-syntax-class-properties": "^6.3.13",
     "babel-plugin-syntax-decorators": "^6.3.13",
