@@ -9,6 +9,7 @@
     "deploy": "node ./lib/deploy.js",
     "selenium": "selenium-standalone start",
     "test": "karma start",
+    "test-watch": "karma start --single-run=false",
     "e2e": "wdio ./wdio.conf.js"
   },
   "author": "sunkay",
@@ -54,6 +55,7 @@
     "html-webpack-plugin": "^1.7.0",
     "karma": "^0.13.17",
     "karma-chrome-launcher": "^0.2.2",
+    "karma-firefox-launcher": "^0.1.7",
     "karma-mocha": "^0.2.1",
     "karma-sourcemap-loader": "^0.3.6",
     "karma-webpack": "^1.7.0",
