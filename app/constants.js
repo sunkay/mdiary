@@ -1,0 +1,11 @@
+// Conditions
+export const ADD_CONDITION = "ADD_CONDITION"
+export const DELETE_CONDITION = "DELETE_CONDITION"
+export const UPDATE_CONDITION = "UPDATE_CONDITION"
+export const REQUEST_CONDITIONS = "REQUEST_CONDITIONS"
+export const RECEIVE_CONDITIONS = "RECEIVE_CONDITIONS"
+
+// Authentication
+export const REGISTER_USER = "REGISTER_USER"
+export const LOGIN_USER = "LOGIN_USER"
+export const LOGOUT_USER = "LOGOUT_USER"

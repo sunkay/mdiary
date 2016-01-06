@@ -61,7 +61,7 @@ import {
   UPDATE_CONDITION,
   REQUEST_CONDITIONS,
   RECEIVE_CONDITIONS
-} from '../actions/conditionActions';
+} from '../constants';
 
 export function conditions(state={}, action){
   switch(action.type){

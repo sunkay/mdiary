@@ -1,9 +1,10 @@
 import {fb} from 'firebase';
 
-export const REGISTER_USER = "REGISTER_USER"
-export const LOGIN_USER = "LOGIN_USER"
-export const LOGOUT_USER = "LOGOUT_USER"
-
+import {
+  REGISTER_USER,
+  LOGIN_USER,
+  LOGOUT_USER,
+} from '../constants';
 
 var root_fbref = new Firebase('https://m-diary.firebaseio.com/');
 var users_fbref = new Firebase('https://m-diary.firebaseio.com/users');
