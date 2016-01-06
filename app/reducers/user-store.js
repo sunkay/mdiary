@@ -13,7 +13,7 @@ import {
   REGISTER_USER,
   LOGIN_USER,
   LOGOUT_USER
-} from '../actions/authActions';
+} from '../constants';
 
 export function user(state={}, action){
   switch(action.type){

@@ -1,12 +1,12 @@
 import _ from 'lodash';
 import Firebase from 'firebase';
-
-export const ADD_CONDITION = "ADD_CONDITION"
-export const DELETE_CONDITION = "DELETE_CONDITION"
-export const UPDATE_CONDITION = "UPDATE_CONDITION"
-// Fetch async
-export const REQUEST_CONDITIONS = "REQUEST_CONDITIONS"
-export const RECEIVE_CONDITIONS = "RECEIVE_CONDITIONS"
+import {
+  ADD_CONDITION,
+  DELETE_CONDITION,
+  UPDATE_CONDITION,
+  REQUEST_CONDITIONS,
+  RECEIVE_CONDITIONS
+} from '../constants';
 
 var fbref = new Firebase('https://m-diary.firebaseio.com/conditions');
 
