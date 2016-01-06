@@ -8,8 +8,8 @@
     "stats": "webpack --profile --json > stats.json",
     "deploy": "node ./lib/deploy.js",
     "selenium": "selenium-standalone start",
-    "test": "wdio ./wdio.conf.js",
-    "karma": "karma start"
+    "test": "karma start",
+    "e2e": "wdio ./wdio.conf.js"
   },
   "author": "sunkay",
   "license": "MIT",
