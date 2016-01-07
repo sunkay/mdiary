@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/sunkay/mdiary.svg?branch=develop)](https://travis-ci.org/sunkay/mdiary)
+Master [![Build Status](https://travis-ci.org/sunkay/mdiary.svg?branch=master)](https://travis-ci.org/sunkay/mdiary)
+
+Develop [![Build Status](https://travis-ci.org/sunkay/mdiary.svg?branch=develop)](https://travis-ci.org/sunkay/mdiary)
 
 
 # mdiary
