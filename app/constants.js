@@ -9,3 +9,15 @@ export const RECEIVE_CONDITIONS = "RECEIVE_CONDITIONS"
 export const REGISTER_USER = "REGISTER_USER"
 export const LOGIN_USER = "LOGIN_USER"
 export const LOGOUT_USER = "LOGOUT_USER"
+
+export const SUCCESS = "SUCCESS"
+export const EMAIL_TAKEN = "EMAIL_TAKEN"
+export const INVALID_EMAIL = "INVALID_EMAIL"
+export const INVALID_PASSWORD = "INVALID_PASSWORD"
+export const INVALID_USER = "INVALID_USER"
+export const UNKNOWN_ERROR = "UNKNOWN_ERROR"
+export const USER_DENIED = "USER_DENIED"
+
+// ERROR
+export const SHOW_ERROR = "SHOW_ERROR"
+export const HIDE_ERROR = "HIDE_ERROR"

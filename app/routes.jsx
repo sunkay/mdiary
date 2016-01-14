@@ -15,11 +15,19 @@ import ConditionsUpdateContainer from'./containers/conditions-update-container';
 import RegisterContainer from './containers/register-container';
 import LoginContainer from './containers/login-container';
 import Logout from './components/auth/logout';
+import authCtx from './components/auth/auth-context';
+
+function requireAuth(nextState, replace){
+  console.log("loggedIn = ", authCtx.loggedIn());
+  console.log("path = ", nextState.location.pathname);
+  if(!authCtx.loggedIn())
+    replace({nextPathName: nextState.location.pathname}, '/login');
+}
 
 export default(
   <Route path="/" component={Main}>
     <IndexRoute component={Home}/>
-    <Route path="about" component={about} />
+    <Route path="about" component={about} onEnter={requireAuth}/>
     <Route path="terms" component={Terms} />
     <Route path="privacy" component={Privacy} />
     <Route path="login" component={LoginContainer} />

@@ -20,8 +20,15 @@ export function registerUser(email, password) {
   }, function(error, userData){
     if(error){
       console.log("Error creating a user:", error);
+      return ({
+        code: error.code,
+        msg: error.message
+      });
     } else {
       console.log("successfully created a user:", userData);
+      return({
+        code: "SUCCESS"
+      });
     }
   });
 
@@ -30,7 +37,7 @@ export function registerUser(email, password) {
   };
 }
 
-export function loginUser(email, password) {
+export function loginUser(email, password, callback) {
   console.log("In authActions:loginUser", email, password);
 
   // create user & log them in
@@ -40,11 +47,17 @@ export function loginUser(email, password) {
   }, function(error, userData){
     if(error){
       console.log("Login failed:", error);
+      return callback({
+        code: error.code,
+        msg: error.message
+      });
     } else {
       console.log("Authenticaed successfully:", userData);
+      return callback({
+        code: "SUCCESS"
+      });
     }
   });
-
 }
 
 export function logoutUser()
